@@ -1,24 +1,33 @@
-import React, { useState } from 'react';
-import { StyleSheet, Text, TouchableOpacity, View, Image } from 'react-native';
+import React from 'react';
+import { StyleSheet, SafeAreaView, Text, TouchableOpacity, View, Image, Platform, StatusBar } from 'react-native';
 import Header from './Header'
 
-export default function() {
+export default function({ navigation }) {
   return (
-    <View style={styles.container}>
-      <Header/>
+    <SafeAreaView style={styles.safeAreaContainer}>
+      <View style={styles.container}>
+        <Header/>
 
-      <Image style={styles.homeLogo} source={require('../../assets/homeLogo.png')} />
+        <Image style={styles.homeLogo} source={require('../../assets/homeLogo.png')} />
 
-      <TouchableOpacity style={styles.buttonInit}>
-        <Text style={styles.textToButtonInit}>
-          Iniciar
-        </Text>
-      </TouchableOpacity>
-    </View>
+        <TouchableOpacity style={styles.buttonInit} onPress={()=> {navigation.navigate('Questions')}}>
+          <Text style={styles.textToButtonInit}>
+            Iniciar
+          </Text>
+        </TouchableOpacity>
+      </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
+  safeAreaContainer: {
+    flex: 1,
+    backgroundColor: '#FBF5EE',
+    fontFamily: 'Roboto',
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+    alignItems: 'center',
+  },
   container: {
     alignItems: 'center',
   },

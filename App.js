@@ -1,21 +1,27 @@
 import React from 'react';
-import { StyleSheet, SafeAreaView, Platform, StatusBar } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import Questions from './components/question'
 import Home from './components/home/'
 
-export default function App() {
+const AppStack = createStackNavigator();
+
+function AppStackNavigation() {
   return (
-    <SafeAreaView style={styles.container}>
-      <Home/>
-    </SafeAreaView>
+    <AppStack.Navigator screenOptions={{ headerShown: false }}>
+      <AppStack.Screen name="Home" component={Home}/>
+      <AppStack.Screen name="Questions" component={Questions}/>
+    </AppStack.Navigator>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#FBF5EE',
-    fontFamily: 'Roboto',
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
-    alignItems: 'center',
-  },
-});
+export default function App() {
+  return (
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <AppStackNavigation/>
+      </NavigationContainer>
+    </SafeAreaProvider>
+  );
+}
