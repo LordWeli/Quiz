@@ -1,22 +1,28 @@
 import React from 'react';
-import { StyleSheet, SafeAreaView, View, TouchableOpacity, Text, Platform, StatusBar } from 'react-native';
-import Score from '../home/Score';
-import Header from './Header';
+import { StyleSheet, SafeAreaView, ScrollView, Text, TouchableOpacity, Platform, StatusBar } from 'react-native';
+import QuestionResult from './QuestionResult';
 
 export default function({ navigation }) {
+  const results = [
+    '1 - Primeira pergunta',
+    '2 - Segunda pergunta',
+    '3 - Terceira pergunta',
+    '4 - Quarta pergunta',
+    '5 - Quinta pergunta',
+    '6 - Sexta pergunta',
+  ]
   return (
     <SafeAreaView style={styles.safeAreaContainer}>
-      <Header/>
-
-      <View style={styles.scores}>
-        <Score fontSize={60}/>
-      </View>
-
-      <TouchableOpacity style={styles.results} onPress={()=> {navigation.navigate('Results')}}>
-        <Text style={styles.text}>
-          Ver Resultados
-        </Text>
-      </TouchableOpacity>
+      <Text style={styles.questionsTitle}> Revisão de Questões </Text>
+      <ScrollView>
+        { 
+          results.map((question, question_index) => {
+            return (
+              <QuestionResult question={question} answer={''} key={question_index}/>
+            )
+          })
+        }
+      </ScrollView>
 
       <TouchableOpacity style={styles.remakeButton} onPress={()=> {navigation.navigate('Questions')}}>
         <Text style={styles.text}>
@@ -35,17 +41,6 @@ const styles = StyleSheet.create({
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
     alignItems: 'center',
   },
-  scores: {
-    marginBottom: 25
-  },
-  results: {
-    width: 260,
-    height: 90,
-    backgroundColor: '#ECA39A',
-    borderRadius: 18,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
   text: {
     color: '#FAFAFA',
     fontSize: 22,
@@ -54,11 +49,14 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 85,
     backgroundColor: '#ECA39A',
-    borderTopLeftRadius: 18,
-    borderTopRightRadius: 18,
     alignItems: 'center',
     justifyContent: 'center',
-    position: 'absolute',
-    bottom: 0
+    zIndex: 99,
+  },
+  questionsTitle: {
+    marginTop: 30,
+    marginBottom: 10,
+    fontSize: 24,
+    color: '#F08080',
   },
 });

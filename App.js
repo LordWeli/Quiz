@@ -5,6 +5,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Home from './components/home/';
 import Questions from './components/question/';
 import Final from './components/final/';
+import Results from './components/final/Results';
 
 const AppStack = createStackNavigator();
 
@@ -14,6 +15,7 @@ function AppStackNavigation() {
       <AppStack.Screen name="Home" component={Home}/>
       <AppStack.Screen name="Questions" component={Questions}/>
       <AppStack.Screen name="Final" component={Final}/>
+      <AppStack.Screen name="Results" component={Results}/>
     </AppStack.Navigator>
   );
 }

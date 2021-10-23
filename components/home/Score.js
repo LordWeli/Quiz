@@ -2,12 +2,17 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 export default function(props) {
+  const score = {
+    accept: 10,
+    wrong: 20
+  }
+
   return (
     <View>
       <Text style={styles(props).scoreInitial}>
-        12/
+        {score['accept']}/
         <Text style={styles(props).scoreFinal}>
-          22
+        {score['wrong']}
         </Text>
       </Text>
     </View>
