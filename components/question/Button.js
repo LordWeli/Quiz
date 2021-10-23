@@ -1,24 +1,42 @@
 import React from 'react';
-import { StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, Animated } from 'react-native';
 
 export default function(props) {
+  const is_correct = props.correct;
+
+  const animatedButton = () => {
+    Animated.timing(
+      props.height,
+      {
+        toValue: is_correct ? 80 : 60,
+        duration: 300,
+        useNativeDriver: false,
+      }).start();
+  }
+
+  const styleButton = {
+    button: {
+      width: 328,
+      height: props.height,
+      backgroundColor: '#ECA39A',
+      borderRadius: 18,
+      alignItems: 'center',
+      justifyContent: 'center',
+      marginBottom: 19
+    },
+  }
+
   return (
-    <TouchableOpacity style={styles.button} onPress={()=> {props.navigation.navigate('Final')}}>
-      <Text style={styles.textButton}> {props.text} </Text>
+    //props.navigation.navigate('Final')
+    <TouchableOpacity onPress={()=> { animatedButton() }}>
+      <Animated.View style={styleButton.button}>
+        <Text style={styles.textButton}> {props.text} </Text>
+      </Animated.View>
     </TouchableOpacity>
   );
 }
 
 const styles = StyleSheet.create({
-  button: {
-    width: 328,
-    height: 70,
-    backgroundColor: '#ECA39A',
-    borderRadius: 18,
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginBottom: 19
-  },
   textButton: {
     fontSize: 22,
     color: '#FAFAFA',
