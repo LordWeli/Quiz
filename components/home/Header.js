@@ -6,7 +6,7 @@ import Title from './Title';
 export default function() {
   return (
     <View style={styles.container}>
-      <Score/>
+      <Score fontSize={16}/>
       <Title width={'70%'}/>
     </View>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, SafeAreaView, View, Platform, StatusBar  } from 'react-native';
+import { StyleSheet, SafeAreaView, Platform, StatusBar  } from 'react-native';
 import Question from './Question';
 import Button from './Button';
 import Header from './Header';
@@ -20,7 +20,7 @@ export default function({ navigation }) {
       { 
         text_to_button.map((text, text_index) => {
           return (
-            <Button text={text} key={text_index}/>
+            <Button text={text} key={text_index} navigation={navigation}/>
           )
         })
       }
