@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import Score from './Score'
-import Title from './Title'
+import Score from './Score';
+import Title from './Title';
 
 export default function() {
   return (

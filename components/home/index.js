@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, SafeAreaView, Text, TouchableOpacity, View, Image, Platform, StatusBar } from 'react-native';
-import Header from './Header'
+import Header from './Header';
 
 export default function({ navigation }) {
   return (
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     marginBottom: 80,
   },
   buttonInit: {
-    width: 338,
+    width: 328,
     height: 114,
     backgroundColor: '#ECA39A',
     borderRadius: 18,

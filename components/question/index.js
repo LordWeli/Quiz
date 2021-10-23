@@ -1,10 +1,11 @@
 import React from 'react';
-import { StyleSheet, SafeAreaView, View, Text, TouchableOpacity, Platform, StatusBar  } from 'react-native';
-import Question from './Question'
-import Button from './Button'
+import { StyleSheet, SafeAreaView, View, Platform, StatusBar  } from 'react-native';
+import Question from './Question';
+import Button from './Button';
+import Header from './Header';
 
-export default function() {
-
+export default function({ navigation }) {
+  const quantity = '50%'
   const text_to_button = [
     '19 Anos',
     '37 Anos',
@@ -14,6 +15,7 @@ export default function() {
 
   return (
     <SafeAreaView style={styles.safeAreaContainer}>
+      <Header quantity={quantity}/>
       <Question/>
       { 
         text_to_button.map((text, text_index) => {
