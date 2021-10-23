@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Score from '../home/Score';
 import Title from '../home/Title';
@@ -9,8 +9,11 @@ export default function(props) {
   return (
     <View style={styles.container}>
       <View style={styles.titleRow}>
-        <Icon name="angle-left" size={20} style={styles.icon} />
-        <Title width={'90%'}/>
+        <TouchableOpacity style={styles.iconButton} onPress={()=> { props.navigation.navigate('Home') }}>
+          <Icon name="angle-left" size={20} style={styles.icon} />
+        </TouchableOpacity>
+
+        <Title width={'75%'}/>
       </View>
 
       <ProgressBar quantity={props.quantity}/>
@@ -29,14 +32,18 @@ const styles = StyleSheet.create({
   },
   titleRow: {
     flexDirection:'row',
-    marginBottom: 10
+    marginBottom: 15
   },
   score: {
     alignItems: 'flex-start',
     marginLeft: -10
   },
+  iconButton: {
+    alignSelf: 'center',
+  },
   icon: {
     color: "#F08080",
-    alignSelf: 'center',
+    paddingLeft: 10,
+    paddingRight: 15,
   }
 });

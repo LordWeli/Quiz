@@ -15,7 +15,7 @@ export default function({ navigation }) {
 
   return (
     <SafeAreaView style={styles.safeAreaContainer}>
-      <Header quantity={quantity}/>
+      <Header quantity={quantity} navigation={navigation}/>
       <Question/>
       { 
         text_to_button.map((text, text_index) => {
