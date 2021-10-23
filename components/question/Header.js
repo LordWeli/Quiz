@@ -1,14 +1,16 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import Score from '../home/Score';
 import Title from '../home/Title';
 import ProgressBar from './ProgressBar';
 
 export default function(props) {
   return (
-    <View>
-      <View style={styles.title}>
-        <Title/>
+    <View style={styles.container}>
+      <View style={styles.titleRow}>
+        <Icon name="angle-left" size={20} style={styles.icon} />
+        <Title width={'90%'}/>
       </View>
 
       <ProgressBar quantity={props.quantity}/>
@@ -21,11 +23,20 @@ export default function(props) {
 }
 
 const styles = StyleSheet.create({
-  title: {
-    alignItems: 'center',
+  container: {
+    marginTop: 30,
+    marginBottom: 5,
+  },
+  titleRow: {
+    flexDirection:'row',
+    marginBottom: 10
   },
   score: {
     alignItems: 'flex-start',
     marginLeft: -10
+  },
+  icon: {
+    color: "#F08080",
+    alignSelf: 'center',
   }
 });

@@ -7,7 +7,7 @@ export default function() {
   return (
     <View style={styles.container}>
       <Score/>
-      <Title/>
+      <Title width={'70%'}/>
     </View>
   );
 }

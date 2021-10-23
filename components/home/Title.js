@@ -1,18 +1,18 @@
 import React from 'react';
 import { StyleSheet, Text } from 'react-native';
 
-export default function() {
+export default function(props) {
   return (
-    <Text style={styles.title}> Math Quiz </Text>
+    <Text style={styles(props).title}> Math Quiz </Text>
   );
 }
 
-const styles = StyleSheet.create({
+const styles = (props) => StyleSheet.create({
   title: {
     color: '#F08080',
     fontWeight: '500',
     fontSize: 24,
     textAlign: 'center',   
-    width: '70%'
+    width: props.width
   },
 });
