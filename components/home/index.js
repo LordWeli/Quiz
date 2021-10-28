@@ -8,8 +8,10 @@ export default function({ navigation }) {
       <View style={styles.container}>
         <Header/>
 
-        <Image style={styles.homeLogo} source={require('../../assets/homeLogo.png')} />
+        <Image style={styles.homeLogo} source={require('../../assets/homeLogo.png')} />        
+      </View>
 
+      <View style={styles.initContainer}>
         <TouchableOpacity style={styles.buttonInit} onPress={()=> {navigation.navigate('Questions')}}>
           <Text style={styles.textToButtonInit}>
             Iniciar
@@ -35,6 +37,10 @@ const styles = StyleSheet.create({
     width: 328,
     height: 195,
     marginBottom: 80,
+  },
+  initContainer: {
+    height: '25%',
+    justifyContent: 'center',
   },
   buttonInit: {
     width: 328,
