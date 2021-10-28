@@ -24,9 +24,9 @@ export default function({ navigation }) {
         }
       </ScrollView>
 
-      <TouchableOpacity style={styles.remakeButton} onPress={()=> {navigation.navigate('Questions')}}>
+      <TouchableOpacity style={styles.resultButton} onPress={()=> { navigation.navigate('Final') }}>
         <Text style={styles.text}>
-          Refazer
+          Resultado
         </Text>
       </TouchableOpacity>
     </SafeAreaView>
@@ -45,10 +45,10 @@ const styles = StyleSheet.create({
     color: '#FAFAFA',
     fontSize: 22,
   },
-  remakeButton: {
+  resultButton: {
     width: '100%',
     height: 85,
-    backgroundColor: '#ECA39A',
+    backgroundColor: '#F18C8C',
     alignItems: 'center',
     justifyContent: 'center',
     zIndex: 99,
