@@ -6,6 +6,8 @@ import Button from './Button';
 
 export default function({ navigation }) {
   const [color, setColor] = useState('#eca39a');
+  const [buttonMarkBackground, setButtonMarkBackground] = useState('#eca39a');
+  const [buttonBackground, setButtonBackground] = useState('#eca39a');
 
   const quantity = '50%';
   const values_to_button = [
@@ -22,7 +24,15 @@ export default function({ navigation }) {
       { 
         values_to_button.map((value, value_index) => {
           return (
-            <Button text={value.question} correct={value.correct} setColor={setColor} color={color} key={value_index} navigation={navigation}/>
+            <Button
+              text={value.question}
+              key={value_index}
+              navigation={navigation}
+              correct={value.correct}
+              setColor={[color, setColor]}
+              setButtonMarkBackground={[buttonMarkBackground, setButtonMarkBackground]}
+              setButtonBackground={[buttonBackground, setButtonBackground]}
+            />
           )
         })
       }
