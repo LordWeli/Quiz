@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, SafeAreaView, Platform, StatusBar } from 'react-native';
+import Header from './Header';
 import Question from './Question';
 import Button from './Button';
-import Header from './Header';
 
 export default function({ navigation }) {
-  const quantity = '50%'
+  const [color, setColor] = useState('#eca39a');
+
+  const quantity = '50%';
   const values_to_button = [
     {question: '19 Anos', correct: true},
     {question: '37 Anos', correct: false},
@@ -20,7 +22,7 @@ export default function({ navigation }) {
       { 
         values_to_button.map((value, value_index) => {
           return (
-            <Button text={value.question} correct={value.correct} key={value_index} navigation={navigation}/>
+            <Button text={value.question} correct={value.correct} setColor={setColor} color={color} key={value_index} navigation={navigation}/>
           )
         })
       }

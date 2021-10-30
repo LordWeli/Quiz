@@ -4,12 +4,12 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default function(props) {
   const [height, setHeight] = useState(new Animated.Value(70));
-  const [color, setColor] = useState('#eca39a')
+
 
   const icon_name = props.correct ? 'check' : 'times'
 
   const animatedButton = () => {
-    setColor('#fafafa')
+    props.setColor('#fafafa');
 
     Animated.timing(
       height,
@@ -36,7 +36,7 @@ export default function(props) {
     },
     icon: {
       width: '35%',
-      color: color,
+      color: props.color,
       textAlign: 'center'
     }
   }
