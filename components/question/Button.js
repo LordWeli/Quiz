@@ -1,36 +1,51 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, Animated } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default function(props) {
-  const is_correct = props.correct;
+  const [height, setHeight] = useState(new Animated.Value(70));
+  const [color, setColor] = useState('#eca39a')
+
+  const icon_name = props.correct ? 'check' : 'times'
 
   const animatedButton = () => {
+    setColor('#fafafa')
+
     Animated.timing(
-      props.height,
+      height,
       {
-        toValue: is_correct ? 80 : 60,
+        toValue: 80,
         duration: 300,
         useNativeDriver: false,
       }).start();
+
+    // setTimeout(() => {
+    //   props.navigation.navigate('Final')
+    // }, 5000);
   }
 
   const styleButton = {
     button: {
       width: 328,
-      height: props.height,
+      height: 70,
       backgroundColor: '#ECA39A',
       borderRadius: 18,
+      flexDirection: 'row',
       alignItems: 'center',
-      justifyContent: 'center',
-      marginBottom: 19
+      marginBottom: 19,
     },
+    icon: {
+      width: '35%',
+      color: color,
+      textAlign: 'center'
+    }
   }
 
   return (
-    //props.navigation.navigate('Final')
     <TouchableOpacity onPress={()=> { animatedButton() }}>
       <Animated.View style={styleButton.button}>
-        <Text style={styles.textButton}> {props.text} </Text>
+        <Text style={styles.textButton}> { props.text } </Text>
+        <Icon name={icon_name} size={15} style={styleButton.icon} />
       </Animated.View>
     </TouchableOpacity>
   );
@@ -40,5 +55,7 @@ const styles = StyleSheet.create({
   textButton: {
     fontSize: 22,
     color: '#FAFAFA',
-  }
+    width: '65%',
+    textAlign: 'right'
+  },
 });
