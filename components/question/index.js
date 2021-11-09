@@ -1,15 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, SafeAreaView, Platform, StatusBar, Animated } from 'react-native';
 import Header from './Header';
 import Question from './Question';
 import Button from './Button';
+import Score from '../shared/Score'
 
 export default function({ navigation }) {
-  const [color, setColor] = useState('#eca39a');
-  const [buttonMarkBackground, setButtonMarkBackground] = useState('#eca39a');
-  const [buttonBackground, setButtonBackground] = useState('#eca39a');
-  const [heightMarkButton, setHeightMarkButton] = useState(new Animated.Value(70));
-  const [heightButton, setHeightButton] = useState(new Animated.Value(70));
+  const params = { color: '#eca39a', height: 70 }
+
+  const [color, setColor] = useState(params['color']);
+  const [buttonMarkBackground, setButtonMarkBackground] = useState(params['color']);
+  const [buttonBackground, setButtonBackground] = useState(params['color']);
+  const [heightMarkButton, setHeightMarkButton] = useState(new Animated.Value(params['height']));
+  const [heightButton, setHeightButton] = useState(new Animated.Value(params['height']));
 
   const quantity = '50%';
   const values_to_button = [
@@ -19,26 +22,45 @@ export default function({ navigation }) {
     {question: '17 Anos', correct: false}
   ]
 
-  const changeHeightValue = () => {
-    Animated.timing(
-      heightMarkButton,
-      {
-        toValue: 80,
-        duration: 300,
-        useNativeDriver: false,
-      }).start();
+  useEffect(() => {
+    clearStates();
+  }, []);
 
+  const clearStates = () => {
+    setColor(params['color']);
+    setButtonMarkBackground(params['color']);
+    setButtonBackground(params['color']);
+    setHeightMarkButton(new Animated.Value(params['height']));
+    setHeightButton(new Animated.Value(params['height']));
+  }
+
+  const changeHeightValue = () => {
+    Animated.parallel([
+      Animated.timing(
+        heightMarkButton,
+        {
+          toValue: 80,
+          duration: 300,
+          useNativeDriver: false,
+        }),
       Animated.timing(
         heightButton,
         {
           toValue: 60,
           duration: 300,
           useNativeDriver: false,
-        }).start();
+        })
+    ]).start();
 
-    // setTimeout(() => {
-    //   props.navigation.navigate('Final')
-    // }, 5000);
+    setTimeout(() => {
+      if(Score['current'] == Score['total']) {
+        navigation.navigate('Final');
+      }
+      else {
+        clearStates();
+        navigation.navigate('Questions');
+      }
+    }, 3500);
   }
 
   return (

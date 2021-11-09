@@ -1,18 +1,15 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import Score from '../shared/Score'
 
 export default function(props) {
-  const score = {
-    correct: 10,
-    wrong: 20
-  }
 
   return (
     <View>
       <Text style={styles(props).scoreInitial}>
-        {score['correct']}/
+        {Score['current']}/
         <Text style={styles(props).scoreFinal}>
-        {score['wrong']}
+        {Score['total']}
         </Text>
       </Text>
     </View>
