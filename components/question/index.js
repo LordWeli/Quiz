@@ -34,6 +34,10 @@ export default function({ navigation }) {
     setHeightButton(new Animated.Value(params['height']));
   }
 
+  const clearButtonMark = (function_state) => {
+    function_state(false);
+  }
+
   const changeHeightValue = () => {
     Animated.parallel([
       Animated.timing(
@@ -80,6 +84,7 @@ export default function({ navigation }) {
               setButtonBackground={[buttonBackground, setButtonBackground]}
               heightButtonValues={[heightMarkButton, heightButton]}
               changeHeightValue={changeHeightValue}
+              clearButtonMark={clearButtonMark}
             />
           )
         })
