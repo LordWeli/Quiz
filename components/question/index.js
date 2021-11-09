@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, SafeAreaView, Platform, StatusBar } from 'react-native';
+import { StyleSheet, SafeAreaView, Platform, StatusBar, Animated } from 'react-native';
 import Header from './Header';
 import Question from './Question';
 import Button from './Button';
@@ -8,6 +8,8 @@ export default function({ navigation }) {
   const [color, setColor] = useState('#eca39a');
   const [buttonMarkBackground, setButtonMarkBackground] = useState('#eca39a');
   const [buttonBackground, setButtonBackground] = useState('#eca39a');
+  const [heightMarkButton, setHeightMarkButton] = useState(new Animated.Value(70));
+  const [heightButton, setHeightButton] = useState(new Animated.Value(70));
 
   const quantity = '50%';
   const values_to_button = [
@@ -16,6 +18,28 @@ export default function({ navigation }) {
     {question: '20 Anos', correct: false},
     {question: '17 Anos', correct: false}
   ]
+
+  const changeHeightValue = () => {
+    Animated.timing(
+      heightMarkButton,
+      {
+        toValue: 80,
+        duration: 300,
+        useNativeDriver: false,
+      }).start();
+
+      Animated.timing(
+        heightButton,
+        {
+          toValue: 60,
+          duration: 300,
+          useNativeDriver: false,
+        }).start();
+
+    // setTimeout(() => {
+    //   props.navigation.navigate('Final')
+    // }, 5000);
+  }
 
   return (
     <SafeAreaView style={styles.safeAreaContainer}>
@@ -32,6 +56,8 @@ export default function({ navigation }) {
               setColor={[color, setColor]}
               setButtonMarkBackground={[buttonMarkBackground, setButtonMarkBackground]}
               setButtonBackground={[buttonBackground, setButtonBackground]}
+              heightButtonValues={[heightMarkButton, heightButton]}
+              changeHeightValue={changeHeightValue}
             />
           )
         })
