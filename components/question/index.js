@@ -13,6 +13,7 @@ export default function({ navigation }) {
   const [buttonBackground, setButtonBackground] = useState(params['color']);
   const [heightMarkButton, setHeightMarkButton] = useState(new Animated.Value(params['height']));
   const [heightButton, setHeightButton] = useState(new Animated.Value(params['height']));
+  const [nextButtonVisible, setNextButtonVisible] = useState(false);
 
   const quantity = '50%';
   const values_to_button = [
@@ -27,6 +28,7 @@ export default function({ navigation }) {
   }, []);
 
   const clearStates = () => {
+    setNextButtonVisible(false);
     setColor(params['color']);
     setButtonMarkBackground(params['color']);
     setButtonBackground(params['color']);
@@ -56,20 +58,22 @@ export default function({ navigation }) {
         })
     ]).start();
 
-    setTimeout(() => {
-      if(Score['current'] == Score['total']) {
-        navigation.navigate('Final');
-      }
-      else {
-        clearStates();
-        navigation.navigate('Questions');
-      }
-    }, 3500);
+    setNextButtonVisible(true);
+
+    // setTimeout(() => {
+    //   if(Score['current'] == Score['total']) {
+    //     navigation.navigate('Final');
+    //   }
+    //   else {
+    //     clearStates();
+    //     navigation.navigate('Questions');
+    //   }
+    // }, 3500);
   }
 
   return (
     <SafeAreaView style={styles.safeAreaContainer}>
-      <Header quantity={quantity} navigation={navigation}/>
+      <Header quantity={quantity} navigation={navigation} nextButtonVisible={nextButtonVisible}/>
       <Question/>
       { 
         values_to_button.map((value, value_index) => {

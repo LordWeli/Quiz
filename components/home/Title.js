@@ -13,6 +13,6 @@ const styles = (props) => StyleSheet.create({
     fontWeight: '500',
     fontSize: 24,
     textAlign: 'center',   
-    width: props.width
+    width: props.width,
   },
 });

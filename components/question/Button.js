@@ -26,9 +26,9 @@ export default function(props) {
 
     props.changeHeightValue();
     
-    setTimeout(() => {
-      props.clearButtonMark(setButtonMark);
-    }, 3498);
+    // setTimeout(() => {
+    //   props.clearButtonMark(setButtonMark);
+    // }, 3498);
   }
 
   const styleButton = {

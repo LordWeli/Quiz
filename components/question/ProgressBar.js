@@ -15,7 +15,7 @@ const styles = (props) => StyleSheet.create({
     height: 10,
     borderRadius: 15,
     backgroundColor: '#FFDAB9',
-    flexDirection:'row'
+    flexDirection:'row',
   },
   progress: {
     position: 'absolute',
