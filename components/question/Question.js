@@ -2,10 +2,8 @@ import React from 'react';
 import { StyleSheet, Text } from 'react-native';
 
 export default function(props) {
-  const question = 'Se David tem 27 anos em 2011. Qual a idade dele em 2003?'
-
   return (
-    <Text style={styles.question}>{question}</Text>
+    <Text style={styles.question}>{props.question}</Text>
   );
 }
 

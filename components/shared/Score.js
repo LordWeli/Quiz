@@ -1,5 +1,5 @@
 const score = {
-  current: 10,
+  current: 1,
   total: 20
 }
 

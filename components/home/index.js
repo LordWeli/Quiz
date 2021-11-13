@@ -1,8 +1,17 @@
 import React from 'react';
 import { StyleSheet, SafeAreaView, Text, TouchableOpacity, View, Image, Platform, StatusBar } from 'react-native';
 import Header from './Header';
+import * as QuestionAnswers from '../shared/QuestionAnswers';
 
 export default function({ navigation }) {
+  const getQuestionAnswerToQuestions = () => {
+    global.questionAnswers = QuestionAnswers.returnShuffle();
+
+    setTimeout(() => {
+      navigation.navigate('Questions');
+    }, 100)
+  }
+
   return (
     <SafeAreaView style={styles.safeAreaContainer}>
       <View style={styles.container}>
@@ -12,7 +21,7 @@ export default function({ navigation }) {
       </View>
 
       <View style={styles.initContainer}>
-        <TouchableOpacity style={styles.buttonInit} onPress={()=> {navigation.navigate('Questions')}}>
+        <TouchableOpacity style={styles.buttonInit} onPress={()=> { getQuestionAnswerToQuestions() }}>
           <Text style={styles.textToButtonInit}>
             Iniciar
           </Text>

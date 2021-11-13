@@ -23,6 +23,9 @@ export default function({ navigation }) {
     {question: '17 Anos', correct: false}
   ]
 
+  const values_to_question = global.questionAnswers[Score['current']];
+  const values_to_answers = values_to_question["answers"];
+
   useEffect(() => {
     clearStates();
   }, []);
@@ -74,12 +77,13 @@ export default function({ navigation }) {
   return (
     <SafeAreaView style={styles.safeAreaContainer}>
       <Header quantity={quantity} navigation={navigation}/>
-      <Question/>
-      { 
-        values_to_button.map((value, value_index) => {
+      <Question question={values_to_question['question']}/>
+
+      {
+        values_to_answers.map((value, value_index) => {
           return (
             <Button
-              text={value.question}
+              text={value.answer}
               key={value_index}
               navigation={navigation}
               correct={value.correct}
