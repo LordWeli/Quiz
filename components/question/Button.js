@@ -42,9 +42,10 @@ export default function(props) {
       marginBottom: 19,
     },
     icon: {
-      width: '35%',
+      width: '5%',
       color: props.setColor[0],
-      textAlign: 'center'
+      textAlign: 'center',
+      marginLeft: -60
     }
   }
 
@@ -62,7 +63,10 @@ const styles = StyleSheet.create({
   textButton: {
     fontSize: 22,
     color: '#FAFAFA',
-    width: '65%',
-    textAlign: 'right'
+    width: '100%',
+    textAlign: 'center',
+    paddingRight: 60,
+    paddingLeft: 60
+
   },
 });

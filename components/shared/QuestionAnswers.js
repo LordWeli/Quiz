@@ -11,17 +11,17 @@ const questions = {
   2: {
     question: 'Pergunta 2',
     answers: [
-      { answer: '1', correct: true },
+      { answer: '1', correct: false },
       { answer: '2', correct: false },
-      { answer: '3', correct: false },
+      { answer: '3', correct: true },
       { answer: '4', correct: false }
     ]
   },
   3: {
     question: 'Pergunta 3',
     answers: [
-      { answer: '1', correct: true },
-      { answer: '2', correct: false },
+      { answer: '1', correct: false },
+      { answer: '2', correct: true },
       { answer: '3', correct: false },
       { answer: '4', correct: false }
     ]
@@ -38,17 +38,17 @@ const questions = {
   5: {
     question: 'Pergunta 5',
     answers: [
-      { answer: '1', correct: true },
+      { answer: '1', correct: false },
       { answer: '2', correct: false },
-      { answer: '3', correct: false },
+      { answer: '3', correct: true },
       { answer: '4', correct: false }
     ]
   },
   6: {
     question: 'Pergunta 6',
     answers: [
-      { answer: '1', correct: true },
-      { answer: '2', correct: false },
+      { answer: '1', correct: false },
+      { answer: '2', correct: true },
       { answer: '3', correct: false },
       { answer: '4', correct: false }
     ]
@@ -56,18 +56,18 @@ const questions = {
   7: {
     question: 'Pergunta 7',
     answers: [
-      { answer: '1', correct: true },
+      { answer: '1', correct: false },
       { answer: '2', correct: false },
       { answer: '3', correct: false },
-      { answer: '4', correct: false }
+      { answer: '4', correct: true }
     ]
   },
   8: {
     question: 'Pergunta 8',
     answers: [
-      { answer: '1', correct: true },
+      { answer: '1', correct: false },
       { answer: '2', correct: false },
-      { answer: '3', correct: false },
+      { answer: '3', correct: true },
       { answer: '4', correct: false }
     ]
   },
@@ -92,8 +92,8 @@ const questions = {
   11: {
     question: 'Pergunta 11',
     answers: [
-      { answer: '1', correct: true },
-      { answer: '2', correct: false },
+      { answer: '1', correct: false },
+      { answer: '2', correct: true },
       { answer: '3', correct: false },
       { answer: '4', correct: false }
     ]
@@ -101,35 +101,35 @@ const questions = {
   12: {
     question: 'Pergunta 12',
     answers: [
-      { answer: '1', correct: true },
+      { answer: '1', correct: false },
       { answer: '2', correct: false },
-      { answer: '3', correct: false },
+      { answer: '3', correct: true },
       { answer: '4', correct: false }
     ]
   },
   13: {
     question: 'Pergunta 13',
     answers: [
-      { answer: '1', correct: true },
+      { answer: '1', correct: false },
       { answer: '2', correct: false },
-      { answer: '3', correct: false },
+      { answer: '3', correct: true },
       { answer: '4', correct: false }
     ]
   },
   14: {
     question: 'Pergunta 14',
     answers: [
-      { answer: '1', correct: true },
+      { answer: '1', correct: false },
       { answer: '2', correct: false },
-      { answer: '3', correct: false },
+      { answer: '3', correct: true },
       { answer: '4', correct: false }
     ]
   },
   15: {
     question: 'Pergunta 15',
     answers: [
-      { answer: '1', correct: true },
-      { answer: '2', correct: false },
+      { answer: '1', correct: false },
+      { answer: '2', correct: true },
       { answer: '3', correct: false },
       { answer: '4', correct: false }
     ]
@@ -137,9 +137,9 @@ const questions = {
   16: {
     question: 'Pergunta 16',
     answers: [
-      { answer: '1', correct: true },
+      { answer: '1', correct: false },
       { answer: '2', correct: false },
-      { answer: '3', correct: false },
+      { answer: '3', correct: true },
       { answer: '4', correct: false }
     ]
   },
@@ -155,27 +155,27 @@ const questions = {
   18: {
     question: 'Pergunta 18',
     answers: [
-      { answer: '1', correct: true },
+      { answer: '1', correct: false },
       { answer: '2', correct: false },
-      { answer: '3', correct: false },
+      { answer: '3', correct: true },
       { answer: '4', correct: false }
     ]
   },
   19: {
     question: 'Pergunta 19',
     answers: [
-      { answer: '1', correct: true },
+      { answer: '1', correct: false },
       { answer: '2', correct: false },
       { answer: '3', correct: false },
-      { answer: '4', correct: false }
+      { answer: '4', correct: true }
     ]
   },
   20: {
     question: 'Pergunta 20',
     answers: [
-      { answer: '1', correct: true },
+      { answer: '1', correct: false },
       { answer: '2', correct: false },
-      { answer: '3', correct: false },
+      { answer: '3', correct: true },
       { answer: '4', correct: false }
     ]
   },

@@ -16,14 +16,8 @@ export default function({ navigation }) {
   const [buttonDisable, setButtonDisable] = useState(false);
 
   const quantity = '50%';
-  const values_to_button = [
-    {question: '19 Anos', correct: true},
-    {question: '37 Anos', correct: false},
-    {question: '20 Anos', correct: false},
-    {question: '17 Anos', correct: false}
-  ]
 
-  const values_to_question = global.questionAnswers[Score['current']];
+  const values_to_question = global.questionAnswers[Score['current'] - 1];
   const values_to_answers = values_to_question["answers"];
 
   useEffect(() => {
