@@ -13,6 +13,7 @@ export default function({ navigation }) {
   const [buttonBackground, setButtonBackground] = useState(params['color']);
   const [heightMarkButton, setHeightMarkButton] = useState(new Animated.Value(params['height']));
   const [heightButton, setHeightButton] = useState(new Animated.Value(params['height']));
+  const [buttonDisable, setButtonDisable] = useState(false);
 
   const quantity = '50%';
   const values_to_button = [
@@ -32,6 +33,7 @@ export default function({ navigation }) {
     setButtonBackground(params['color']);
     setHeightMarkButton(new Animated.Value(params['height']));
     setHeightButton(new Animated.Value(params['height']));
+    setButtonDisable(false);
   }
 
   const clearButtonMark = (function_state) => {
@@ -55,6 +57,8 @@ export default function({ navigation }) {
           useNativeDriver: false,
         })
     ]).start();
+
+    setButtonDisable(true);
 
     setTimeout(() => {
       if(Score['current'] == Score['total']) {
@@ -85,6 +89,7 @@ export default function({ navigation }) {
               heightButtonValues={[heightMarkButton, heightButton]}
               changeHeightValue={changeHeightValue}
               clearButtonMark={clearButtonMark}
+              buttonDisable={buttonDisable}
             />
           )
         })

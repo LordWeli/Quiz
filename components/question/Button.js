@@ -49,7 +49,7 @@ export default function(props) {
   }
 
   return (
-    <TouchableOpacity activeOpacity={0.6} onPress={()=> { animatedButton() }}>
+    <TouchableOpacity activeOpacity={0.6} disabled={props.buttonDisable} onPress={()=> { animatedButton() }}>
       <Animated.View style={styleButton.button}>
         <Text style={styles.textButton}> { props.text } </Text>
         <Icon name={icon_name} size={15} style={styleButton.icon} />
