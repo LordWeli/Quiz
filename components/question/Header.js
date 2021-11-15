@@ -6,10 +6,18 @@ import Title from '../home/Title';
 import ProgressBar from './ProgressBar';
 
 export default function(props) {
+  const backToHome = () => {
+    props.ScoreChange.clearScoreValues();
+
+    setTimeout(() => {
+      props.navigation.navigate('Home')
+    }, 100)
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.titleRow}>
-        <TouchableOpacity style={styles.iconButton} onPress={()=> { props.navigation.navigate('Home') }}>
+        <TouchableOpacity style={styles.iconButton} onPress={()=> { backToHome() }}>
           <Icon name="angle-left" size={20} style={styles.icon} />
         </TouchableOpacity>
 

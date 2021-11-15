@@ -3,10 +3,12 @@ import { StyleSheet, SafeAreaView, Platform, StatusBar, Animated } from 'react-n
 import Header from './Header';
 import Question from './Question';
 import Button from './Button';
-import Score from '../shared/Score'
+import * as ProgressValue from '../shared/ProgressValue';
+import * as ScoreChange from '../shared/ScoreChange';
 
 export default function({ navigation }) {
   const params = { color: '#eca39a', height: 70 }
+  const score = ScoreChange.changeScoreValues();
 
   const [color, setColor] = useState(params['color']);
   const [buttonMarkBackground, setButtonMarkBackground] = useState(params['color']);
@@ -15,12 +17,13 @@ export default function({ navigation }) {
   const [heightButton, setHeightButton] = useState(new Animated.Value(params['height']));
   const [buttonDisable, setButtonDisable] = useState(false);
 
-  const quantity = '50%';
+  const quantity = ProgressValue.getPercent(score['current']);
 
-  const values_to_question = global.questionAnswers[Score['current'] - 1];
+  const values_to_question = global.questionAnswers[score['current'] - 1];
   const values_to_answers = values_to_question["answers"];
 
   useEffect(() => {
+    // console.log(global.questionAnswers.length)
     clearStates();
   }, []);
 
@@ -57,20 +60,23 @@ export default function({ navigation }) {
 
     setButtonDisable(true);
 
+    ScoreChange.changeScoreValues(true);
+
     setTimeout(() => {
-      if(Score['current'] == Score['total']) {
+      console.log(score)
+      if(score['current'] == score['total']) {
         navigation.navigate('Final');
       }
       else {
         clearStates();
         navigation.navigate('Questions');
       }
-    }, 3500);
+    }, 2800);
   }
 
   return (
     <SafeAreaView style={styles.safeAreaContainer}>
-      <Header quantity={quantity} navigation={navigation}/>
+      <Header quantity={quantity} navigation={navigation} ScoreChange={ScoreChange}/>
       <Question question={values_to_question['question']}/>
 
       {

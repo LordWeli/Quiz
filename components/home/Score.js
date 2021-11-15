@@ -1,15 +1,14 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import Score from '../shared/Score'
+import * as ScoreChange from '../shared/ScoreChange'
 
 export default function(props) {
-
   return (
     <View>
       <Text style={styles(props).scoreInitial}>
-        {Score['current']}/
+        {ScoreChange.changeScoreValues()['current']}/
         <Text style={styles(props).scoreFinal}>
-        {Score['total']}
+        {ScoreChange.changeScoreValues()['total']}
         </Text>
       </Text>
     </View>
