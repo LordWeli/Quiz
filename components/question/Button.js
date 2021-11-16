@@ -28,7 +28,7 @@ export default function(props) {
     
     setTimeout(() => {
       props.clearButtonMark(setButtonMark);
-    }, 2799);
+    }, 2599);
   }
 
   const styleButton = {
