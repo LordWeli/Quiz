@@ -3,22 +3,16 @@ import { StyleSheet, SafeAreaView, ScrollView, Text, TouchableOpacity, Platform,
 import QuestionResult from './QuestionResult';
 
 export default function({ navigation }) {
-  const results = [
-    '1 - Primeira pergunta',
-    '2 - Segunda pergunta',
-    '3 - Terceira pergunta',
-    '4 - Quarta pergunta',
-    '5 - Quinta pergunta',
-    '6 - Sexta pergunta',
-  ]
+  const results = global.questionAnswers;
+
   return (
     <SafeAreaView style={styles.safeAreaContainer}>
       <Text style={styles.questionsTitle}> Revisão de Questões </Text>
       <ScrollView>
         { 
-          results.map((question, question_index) => {
+          results.map((result, result_index) => {
             return (
-              <QuestionResult question={question} answer={''} key={question_index}/>
+              <QuestionResult question={result['question']} answers={result['answers']} result_key={result_index} key={result_index}/>
             )
           })
         }

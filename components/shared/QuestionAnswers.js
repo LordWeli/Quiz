@@ -11,10 +11,10 @@ const questions = {
   2: {
     question: 'Pergunta 2',
     answers: [
-      { answer: '1', correct: false },
-      { answer: '2', correct: false },
-      { answer: '3', correct: true },
-      { answer: '4', correct: false }
+      { answer: '1 A expressão Lorem ipsum em design gráfico e editoração é um texto padrão em latim utilizado na produção gráfica para preencher os espa', correct: false },
+      { answer: '2 A expressão Lorem ipsum em design gráfico e editoração é um texto padrão em latim utilizado na produção gráfica para preencher os espa', correct: false },
+      { answer: '3 A expressão Lorem ipsum em design gráfico e editoração é um texto padrão em latim utilizado na produção gráfica para preencher os espa', correct: true },
+      { answer: '4 A expressão Lorem ipsum em design gráfico e editoração é um texto padrão em latim utilizado na produção gráfica para preencher os espa', correct: false }
     ]
   },
   3: {
