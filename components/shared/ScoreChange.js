@@ -1,4 +1,4 @@
-let current_value = 19;
+let current_value = 1;
 
 export const changeScoreValues = (change=false) => {
   if(change) {
@@ -12,5 +12,5 @@ export const changeScoreValues = (change=false) => {
 }
 
 export const clearScoreValues = () => {
-  current_value = 19;
+  current_value = 1;
 }

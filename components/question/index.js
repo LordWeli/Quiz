@@ -59,13 +59,12 @@ export default function({ navigation }) {
 
     setButtonDisable(true);
 
-    ScoreChange.changeScoreValues(true);
-
     setTimeout(() => {
       if(score['current'] == (score['total'] - 1)) {
         navigation.navigate('Final');
       }
       else {
+        ScoreChange.changeScoreValues(true);
         clearStates();
         navigation.navigate('Questions');
       }
