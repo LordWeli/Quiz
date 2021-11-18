@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
+import Score from '../home/Score';
 
 export default function() {
   return (
@@ -7,6 +8,10 @@ export default function() {
       <Text style={styles.title}>
         Resultado
       </Text>
+
+      <View style={styles.scores}>
+        <Score fontSize={60} component={'final'}/>
+      </View>
     </View>
   );
 }
@@ -19,5 +24,8 @@ const styles = StyleSheet.create({
   title: {
     color: '#F08080',
     fontSize: 32,
-  }
+  },
+  scores: {
+    marginBottom: 25
+  },
 });

@@ -23,6 +23,8 @@ export default function({ navigation }) {
   const values_to_answers = values_to_question["answers"];
 
   useEffect(() => {
+    // global.clear_correct_values = ScoreChange.clearCorrectValues();
+
     clearStates();
   }, []);
 
@@ -37,6 +39,10 @@ export default function({ navigation }) {
 
   const clearButtonMark = (function_state) => {
     function_state(false);
+  }
+
+  const changeCorrectValue = (correct) => {
+    ScoreChange.changeCorrectValues(correct);
   }
 
   const changeHeightValue = () => {
@@ -56,6 +62,8 @@ export default function({ navigation }) {
           useNativeDriver: false,
         })
     ]).start();
+
+    console.log(ScoreChange.changeCorrectValues(false))
 
     setButtonDisable(true);
 
@@ -91,6 +99,7 @@ export default function({ navigation }) {
               changeHeightValue={changeHeightValue}
               clearButtonMark={clearButtonMark}
               buttonDisable={buttonDisable}
+              changeCorrectValue={changeCorrectValue}
             />
           )
         })

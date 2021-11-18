@@ -27,7 +27,7 @@ export default function(props) {
       <ProgressBar quantity={props.quantity}/>
 
       <View style={styles.score}>
-        <Score fontSize={16}/>
+        <Score fontSize={16} component={'question'}/>
       </View>
     </View>
   );

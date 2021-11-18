@@ -6,7 +6,7 @@ export default function(props) {
   return (
     <View>
       <Text style={styles(props).scoreInitial}>
-        {ScoreChange.changeScoreValues()['current']}/
+        { props.component == 'question' ? ScoreChange.changeScoreValues()['current'] : ScoreChange.changeCorrectValues(false)['current'] }/
         <Text style={styles(props).scoreFinal}>
         {ScoreChange.changeScoreValues()['total']}
         </Text>

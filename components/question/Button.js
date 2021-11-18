@@ -19,6 +19,8 @@ export default function(props) {
     setButtonMark(true);
     changeHeightButton();
 
+    props.changeCorrectValue(props.correct);
+
     props.setColor[1]('#fafafa');
 
     props.setButtonMarkBackground[1]('#F4978E');

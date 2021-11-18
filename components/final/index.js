@@ -1,16 +1,23 @@
 import React from 'react';
 import { StyleSheet, SafeAreaView, View, TouchableOpacity, Text, Platform, StatusBar } from 'react-native';
-import Score from '../home/Score';
 import Header from './Header';
+import * as ScoreChange from '../shared/ScoreChange';
 
 export default function({ navigation }) {
+  const remakeQuestions = () => {
+    // global.clear_correct_values;
+
+    setTimeout(() => {
+      navigation.navigate('Questions')
+    }, 100)
+  }
   return (
     <SafeAreaView style={styles.safeAreaContainer}>
       <Header/>
 
-      <View style={styles.scores}>
-        <Score fontSize={60}/>
-      </View>
+      {/* <View style={styles.scores}>
+        <Score fontSize={60} component={'final'}/>
+      </View> */}
 
       <TouchableOpacity style={styles.results} onPress={()=> {navigation.navigate('Results')}}>
         <Text style={styles.text}>
@@ -18,7 +25,7 @@ export default function({ navigation }) {
         </Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.remakeButton} onPress={()=> {navigation.navigate('Questions')}}>
+      <TouchableOpacity style={styles.remakeButton} onPress={()=> { remakeQuestions() }}>
         <Text style={styles.text}>
           Refazer
         </Text>
