@@ -1,23 +1,20 @@
 import React from 'react';
-import { StyleSheet, SafeAreaView, View, TouchableOpacity, Text, Platform, StatusBar } from 'react-native';
+import { StyleSheet, SafeAreaView, TouchableOpacity, Text, Platform, StatusBar } from 'react-native';
 import Header from './Header';
 import * as ScoreChange from '../shared/ScoreChange';
 
 export default function({ navigation }) {
   const remakeQuestions = () => {
-    // global.clear_correct_values;
+    ScoreChange.clearCorrectValues();
+    ScoreChange.clearScoreValues();
 
     setTimeout(() => {
-      navigation.navigate('Questions')
-    }, 100)
+      navigation.navigate('Questions');
+    }, 300)
   }
   return (
     <SafeAreaView style={styles.safeAreaContainer}>
       <Header/>
-
-      {/* <View style={styles.scores}>
-        <Score fontSize={60} component={'final'}/>
-      </View> */}
 
       <TouchableOpacity style={styles.results} onPress={()=> {navigation.navigate('Results')}}>
         <Text style={styles.text}>
@@ -41,9 +38,6 @@ const styles = StyleSheet.create({
     fontFamily: 'Roboto',
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
     alignItems: 'center',
-  },
-  scores: {
-    marginBottom: 25
   },
   results: {
     width: 260,

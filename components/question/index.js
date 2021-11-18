@@ -23,8 +23,6 @@ export default function({ navigation }) {
   const values_to_answers = values_to_question["answers"];
 
   useEffect(() => {
-    // global.clear_correct_values = ScoreChange.clearCorrectValues();
-
     clearStates();
   }, []);
 
@@ -69,6 +67,7 @@ export default function({ navigation }) {
 
     setTimeout(() => {
       if(score['current'] == (score['total'] - 1)) {
+        clearStates();
         navigation.navigate('Final');
       }
       else {
@@ -76,7 +75,7 @@ export default function({ navigation }) {
         clearStates();
         navigation.navigate('Questions');
       }
-    }, 2600);
+    }, 2200);
   }
 
   return (

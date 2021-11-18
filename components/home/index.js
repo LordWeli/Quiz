@@ -8,7 +8,7 @@ export default function({ navigation }) {
     global.questionAnswers = QuestionAnswers.returnShuffle();
 
     setTimeout(() => {
-      navigation.navigate('Final');
+      navigation.navigate('Questions');
     }, 100)
   }
 
