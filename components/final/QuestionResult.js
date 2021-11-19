@@ -3,9 +3,26 @@ import { StyleSheet, View, Text } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default function(props) {
+  const values_to_mark = props.QuestionMarkToResult.getValueToMark();
+
+  let answer_mark_value = values_to_mark.find(function(values) {
+    return values['question'] == props.resultKey + 1;
+  })
+
+  const defineColorToText = (answer_index, correct) => {
+    if(!(props.resultKey === 19)) {
+      if(answer_mark_value['answer'] == answer_index + 1) {
+        return correct ? '#A0FFB1' : '#FF6868';
+      }
+      else {
+        return '#fafafa';
+      }
+    }
+  }
+
   return (
     <View style={styles.container}>
-      <Text style={styles.questionTitle}> { `${props.result_key + 1} - ${props.question}` } </Text>
+      <Text style={styles.questionTitle}> { `${props.resultKey + 1} - ${props.question}` } </Text>
       <View style={styles.result}>
         { 
           props.answers.map((answer, answer_index) => {
@@ -22,7 +39,7 @@ export default function(props) {
                 width: 16,
               },
               textToResult: {
-                color: '#fafafa',
+                color: defineColorToText(answer_index, answer['correct']),
                 fontSize: 16,
                 margin: 10,
                 textAlign: 'justify',

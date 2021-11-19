@@ -20,6 +20,7 @@ export default function(props) {
     changeHeightButton();
 
     props.changeCorrectValue(props.correct);
+    props.changeValueToMark(props.answerValue);
 
     props.setColor[1]('#fafafa');
 

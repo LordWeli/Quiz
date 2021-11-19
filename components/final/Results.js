@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, SafeAreaView, ScrollView, Text, TouchableOpacity, Platform, StatusBar } from 'react-native';
 import QuestionResult from './QuestionResult';
+import * as QuestionMarkToResult from '../shared/QuestionMarkToResult';
 
 export default function({ navigation }) {
   const results = global.questionAnswers;
@@ -12,7 +13,13 @@ export default function({ navigation }) {
         { 
           results.map((result, result_index) => {
             return (
-              <QuestionResult question={result['question']} answers={result['answers']} result_key={result_index} key={result_index}/>
+              <QuestionResult
+                question={result['question']}
+                answers={result['answers']}
+                resultKey={result_index}
+                key={result_index}
+                QuestionMarkToResult={QuestionMarkToResult}
+              />
             )
           })
         }

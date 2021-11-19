@@ -5,6 +5,7 @@ import Question from './Question';
 import Button from './Button';
 import * as ProgressValue from '../shared/ProgressValue';
 import * as ScoreChange from '../shared/ScoreChange';
+import * as QuestionMarkToResult from '../shared/QuestionMarkToResult';
 
 export default function({ navigation }) {
   const params = { color: '#eca39a', height: 70 }
@@ -43,6 +44,10 @@ export default function({ navigation }) {
     ScoreChange.changeCorrectValues(correct);
   }
 
+  const changeValueToMark = (answer) => {
+    QuestionMarkToResult.changeValueToMark(score['current'], answer + 1)
+  }
+
   const changeHeightValue = () => {
     Animated.parallel([
       Animated.timing(
@@ -61,8 +66,6 @@ export default function({ navigation }) {
         })
     ]).start();
 
-    console.log(ScoreChange.changeCorrectValues(false))
-
     setButtonDisable(true);
 
     setTimeout(() => {
@@ -80,7 +83,13 @@ export default function({ navigation }) {
 
   return (
     <SafeAreaView style={styles.safeAreaContainer}>
-      <Header quantity={quantity} navigation={navigation} ScoreChange={ScoreChange}/>
+      <Header
+        quantity={quantity}
+        navigation={navigation}
+        ScoreChange={ScoreChange}
+        QuestionMarkToResult={QuestionMarkToResult}
+      />
+
       <Question question={values_to_question['question']}/>
 
       {
@@ -89,6 +98,7 @@ export default function({ navigation }) {
             <Button
               text={value.answer}
               key={value_index}
+              answerValue={value_index}
               navigation={navigation}
               correct={value.correct}
               setColor={[color, setColor]}
@@ -99,6 +109,7 @@ export default function({ navigation }) {
               clearButtonMark={clearButtonMark}
               buttonDisable={buttonDisable}
               changeCorrectValue={changeCorrectValue}
+              changeValueToMark={changeValueToMark}
             />
           )
         })
