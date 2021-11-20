@@ -6,10 +6,13 @@ import Button from './Button';
 import * as ProgressValue from '../shared/ProgressValue';
 import * as ScoreChange from '../shared/ScoreChange';
 import * as QuestionMarkToResult from '../shared/QuestionMarkToResult';
+import { useIsFocused } from '@react-navigation/native'
 
 export default function({ navigation }) {
   const params = { color: '#eca39a', height: 70 }
   const score = ScoreChange.changeScoreValues();
+
+  const isFocused = useIsFocused();
 
   const [color, setColor] = useState(params['color']);
   const [buttonMarkBackground, setButtonMarkBackground] = useState(params['color']);
@@ -24,6 +27,7 @@ export default function({ navigation }) {
   const values_to_answers = values_to_question["answers"];
 
   useEffect(() => {
+    isFocused;
     clearStates();
   }, []);
 

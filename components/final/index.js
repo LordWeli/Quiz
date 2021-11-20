@@ -5,13 +5,14 @@ import * as ScoreChange from '../shared/ScoreChange';
 
 export default function({ navigation }) {
   const remakeQuestions = () => {
-    ScoreChange.clearCorrectValues();
     ScoreChange.clearScoreValues();
+    ScoreChange.clearCorrectValues();
 
     setTimeout(() => {
       navigation.navigate('Questions');
     }, 300)
   }
+
   return (
     <SafeAreaView style={styles.safeAreaContainer}>
       <Header/>
