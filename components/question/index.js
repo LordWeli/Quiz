@@ -71,6 +71,7 @@ export default function({ navigation }) {
     ]).start();
 
     setButtonDisable(true);
+    console.log(QuestionMarkToResult.getValueToMark())
 
     setTimeout(() => {
       if(score['current'] == score['total']) {

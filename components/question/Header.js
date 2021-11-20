@@ -8,6 +8,7 @@ import ProgressBar from './ProgressBar';
 export default function(props) {
   const backToHome = () => {
     props.ScoreChange.clearScoreValues();
+    props.ScoreChange.clearCorrectValues();
     props.QuestionMarkToResult.clearValueToMark();
 
     setTimeout(() => {
