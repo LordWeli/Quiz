@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
   safeAreaContainer: {
     flex: 1,
     backgroundColor: '#FBF5EE',
-    fontFamily: 'Roboto',
+    fontFamily: Platform.OS === "android" ? 'Roboto' : 'Arial',
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
     alignItems: 'center',
   },

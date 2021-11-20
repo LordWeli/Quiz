@@ -24,6 +24,7 @@ export default function({ navigation }) {
   const values_to_answers = values_to_question["answers"];
 
   useEffect(() => {
+    console.log(global.questionAnswers[0])
     clearStates();
   }, []);
 
@@ -69,7 +70,7 @@ export default function({ navigation }) {
     setButtonDisable(true);
 
     setTimeout(() => {
-      if(score['current'] == (score['total'] - 1)) {
+      if(score['current'] == score['total']) {
         clearStates();
         navigation.navigate('Final');
       }
@@ -122,7 +123,7 @@ const styles = StyleSheet.create({
   safeAreaContainer: {
     flex: 1,
     backgroundColor: '#FBF5EE',
-    fontFamily: 'Roboto',
+    fontFamily: Platform.OS === "android" ? 'Roboto' : 'Arial',
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
     alignItems: 'center',
   },
