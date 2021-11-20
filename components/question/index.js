@@ -24,7 +24,6 @@ export default function({ navigation }) {
   const values_to_answers = values_to_question["answers"];
 
   useEffect(() => {
-    console.log(global.questionAnswers[0])
     clearStates();
   }, []);
 
