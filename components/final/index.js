@@ -2,11 +2,13 @@ import React from 'react';
 import { StyleSheet, SafeAreaView, TouchableOpacity, Text, Platform, StatusBar } from 'react-native';
 import Header from './Header';
 import * as ScoreChange from '../shared/ScoreChange';
+import * as QuestionAnswers from '../shared/QuestionAnswers';
 
 export default function({ navigation }) {
   const remakeQuestions = () => {
     ScoreChange.clearScoreValues();
     ScoreChange.clearCorrectValues();
+    global.questionAnswers = QuestionAnswers.returnShuffle();
 
     setTimeout(() => {
       navigation.navigate('Questions');
