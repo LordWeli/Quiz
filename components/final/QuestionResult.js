@@ -11,7 +11,7 @@ export default function(props) {
 
   const defineColorToText = (answer_index, correct) => {
     if(answer_mark_value['answer'] == answer_index + 1) {
-      return correct ? '#A0FFB1' : '#FF6868';
+      return correct ? '#84FD96' : '#FF6868';
     }
     else {
       return '#fafafa';
