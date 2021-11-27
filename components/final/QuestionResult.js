@@ -20,7 +20,7 @@ export default function(props) {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.questionTitle}> { `${props.resultKey + 1} - ${props.question}` } </Text>
+      <Text style={styles.questionTitle}>{ `${props.resultKey + 1} - ${props.question}` } </Text>
       <View style={styles.result}>
         { 
           props.answers.map((answer, answer_index) => {
@@ -29,7 +29,7 @@ export default function(props) {
             const styleButton = {
               textContainer: {
                 width: 320,
-                flexDirection: 'row'
+                flexDirection: 'row',
               },
               icon: {
                 color: '#fafafa',
@@ -62,12 +62,15 @@ export default function(props) {
 
 const styles = StyleSheet.create({
   container: {
-    marginBottom: 10,
+    marginBottom: 15,
+    alignItems: 'center'
   },
   questionTitle: {
+    width: 340,
     fontSize: 22,
     color: '#F08080',
-    marginBottom: 5
+    marginBottom: 10,
+    textAlign: 'justify'
   },
   result: {
     width: 340,
