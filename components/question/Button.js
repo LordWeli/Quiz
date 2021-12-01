@@ -37,12 +37,14 @@ export default function(props) {
   const styleButton = {
     button: {
       width: 328,
-      height: changeHeightButton(),
+      minHeight: changeHeightButton(),
       backgroundColor: changeBackground(),
       borderRadius: 18,
       flexDirection: 'row',
       alignItems: 'center',
-      marginBottom: 19,
+      marginBottom: 15,
+      paddingTop: 5,
+      paddingBottom: 5
     },
     icon: {
       width: '5%',
@@ -55,7 +57,7 @@ export default function(props) {
   return (
     <TouchableOpacity activeOpacity={0.6} disabled={props.buttonDisable} onPress={()=> { animatedButton() }}>
       <Animated.View style={styleButton.button}>
-        <Text style={styles.textButton}> { props.text } </Text>
+        <Text style={styles.textButton}>{ props.text }</Text>
         <Icon name={icon_name} size={15} style={styleButton.icon} />
       </Animated.View>
     </TouchableOpacity>
@@ -69,7 +71,6 @@ const styles = StyleSheet.create({
     width: '100%',
     textAlign: 'center',
     paddingRight: 60,
-    paddingLeft: 60
-
+    paddingLeft: 60,
   },
 });

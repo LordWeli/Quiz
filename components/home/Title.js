@@ -3,7 +3,7 @@ import { StyleSheet, Text } from 'react-native';
 
 export default function(props) {
   return (
-    <Text style={styles(props).title}> Título Quiz </Text>
+    <Text style={styles(props).title}> Arboristique </Text>
   );
 }
 
