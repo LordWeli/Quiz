@@ -37,7 +37,7 @@ export default function(props) {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 30,
+    marginTop: 15,
     marginBottom: 5,
   },
   titleRow: {

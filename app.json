@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "s_quiz",
-    "slug": "s_quiz",
+    "name": "Arboristique",
+    "slug": "Arboristique",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -22,10 +22,10 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#FBF5EE"
       },
-      "package": "com.lordweli.s_quiz"
+      "package": "com.lordweli.arboristique"
     },
     "web": {
       "favicon": "./assets/favicon.png"

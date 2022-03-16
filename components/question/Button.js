@@ -50,7 +50,7 @@ export default function(props) {
       width: '5%',
       color: props.setColor[0],
       textAlign: 'center',
-      marginLeft: -60
+      marginLeft: -50
     }
   }
 
@@ -69,8 +69,8 @@ const styles = StyleSheet.create({
     fontSize: 22,
     color: '#FAFAFA',
     width: '100%',
-    textAlign: 'center',
+    textAlign: 'justify',
     paddingRight: 60,
-    paddingLeft: 60,
+    paddingLeft: 30,
   },
 });

@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     color: '#F08080',
     textAlign: 'left',
     width: 328,
-    marginTop: 15,
-    marginBottom: 36
+    marginTop: 5,
+    marginBottom: 20
   }
 });
