@@ -7,7 +7,7 @@ export const changeScoreValues = (change=false) => {
 
   return {
     current: current_value,
-    total: 20
+    total: 10
   }
 }
 
@@ -24,7 +24,7 @@ export const changeCorrectValues = (change) => {
 
   return {
     current: correct_value,
-    total: 20
+    total: 10
   }
 }
 

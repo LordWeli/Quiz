@@ -457,7 +457,7 @@ const questions = {
 export const returnShuffle = () => {
   let keys = Object.keys(questions);
 
-  let shuffle = keys.sort(() => .5 - Math.random()).slice(0, 20);
+  let shuffle = keys.sort(() => .5 - Math.random()).slice(0, 10);
 
   let shuffle_questions = shuffle.map(function (i) {
     return questions[i];
